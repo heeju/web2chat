@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  -webkit-transition: background-color .2s, color .2s;
+  transition: background-color .2s, color .2s;
 }
 
 html {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
 }
+
 body {
   position: fixed;
   top: 0;
@@ -25,11 +28,70 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: stretch;
-  align-items: stretch;*/
+  align-items: stretch;
+*/
 
-  z-index: 100;
   font-size: 14px;
   font-family: arial;
   /* paint it black! */
   background-color: rgba(255,255,255,1);
+}
+
+body.wide {
+
+}
+
+
+
+/* list */
+
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+section > .frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.frame > * {
+  overflow: hidden;
+}
+
+#list {
+  background-color: rgba(255,255,100,.3);
+}
+
+
+
+.frame > .frame-header {
+  flex: 0 1 auto;
+  min-height: 3em;
+  background-color: rgba(180,20,30,1);
+  color: #fff;
+}
+
+.frame > .frame-body {
+  flex: 1 1 auto;
+  background-color: rgba(255,255,200,.1);
+}
+
+.frame > .frame-footer {
+  flex: 0 1 auto;
+  height: 3em;
+  background-color: rgba(180,20,30,1);
 }

@@ -2,6 +2,7 @@
 var express = require('express')
   , app = express()
   , server = require('http').createServer(app)
+  , pjax = require('./pjax.js')
   , io = require('socket.io')(server)
   , port = process.env.PORT || 3000;
 
@@ -11,9 +12,9 @@ server.listen(port, function () {
 
 // Routing
 app.use(express.static(__dirname + '/public'));
+app.use(pjax());
 app.engine('html', require('ejs').__express);
 app.set('view engine', 'html');
-
 
 /*
  * Set route
